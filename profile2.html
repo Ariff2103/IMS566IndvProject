@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>USEP: UiTM student e-profile</title>
+    <!-- favicon -->
+    <link rel="icon" type="image/x-icon" href="images/logo usep 2.png">
+    <!-- bs CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Monomaniac+One&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+    <!-- style.css -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="preloader">
+    <img src="images/loader.gif" alt="Loading..." class="preloader-gif">
+  </div>
+  <script>
+    // Preloader
+    window.addEventListener("load", function () {
+      const preloader = document.getElementById("preloader");
+      setTimeout(() => {
+        preloader.style.opacity = "0"; // fade-out effect
+        setTimeout(() => {
+          preloader.style.display = "none";
+        }, 500); // Matches CSS transition duration
+      }, 100); // adjust saat
+    });
+  </script>
+  <!-- header -->
+   <div class="container d-flex justify-content-center">
+        <div class="title">Profile</div> 
+   </div>
+
+  <!-- navbar -->
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container">
+      <div class="image-container">
+      <img class="image1" src="images/logo usep.png" alt="USEP Logo" width="50px"><img class="image2" src="images/logo usep 2.png" width="55px" alt="">
+      </div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="home2.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="profile2.html"><i class="fa-solid fa-address-card"></i></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="course2.html">Course</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact2.html">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="setting2.html">Setting</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about2.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Logout</a>
+          </li>
+        </ul>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="darkModeToggle">
+          <label class="form.check.label" for="darkModeToggle" id="themeLabel">Dark Mode</label>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+<!-- profile -->
+<div class="container-fluid bg-body-tertiary">
+    <div class="container moveContainer">
+        <div class="row py-5">
+          <div class="col-md-2 text-center mt-2">
+            <div class="containerImage mt-4">
+              <img class="studentPic rounded-3" src="images/yan zainal.jpeg" alt="student pic 1" width="130px">
+              <div class="middle">
+                <div class="noMatrix">Matrix 2024794189</div>
+              </div>
+            </div>
+            <div class="vl opacity-50"></div>
+          </div>
+      <div id="text" class="col-md-10">
+        <div class="container">
+          <div class="row"><h3>MUHAMMAD ZUHRI IMRAN BIN MOHD AZHAN</h3>
+          </div>
+          <div class="row"><h6 class="usep">Universiti Teknologi MARA (UiTM)</h6></div>
+          <div class="row"><p>Faculty: College Computer, Informatic and Mathematic (KPPIM)</p></div>
+          <div class="row"><p>Program: CDIM262 Information System Management</p></div>
+          <div class="row"><p>Email Student: <a href="#">2024794189*@student.uitm.edu.my</a></p></div>
+          <div class="row"><p>Contact: <a href="#">+60 16-290 8***</a></p></div>
+          <div class="row"><p>Date of Birth: 31 AUGUST 2003</p>
+          </div>
+        </div>
+
+          <span class="badge customFont mx-2 text-bg-warning py-2 px-2"><i class="fa-solid fa-star"></i> Current Semester: 4</span>
+          <span class="badge customFont mx-2 text-bg-success py-2 px-2"><i class="fa-solid fa-book"></i> Status: Ongoing</span>
+          <span class="badge customFont mx-2 text-bg-danger py-2 px-2"><i class="fa-solid fa-calendar"></i> Session: 2024</span>
+          </div>
+        </div>
+    </div>
+</div>
+<!-- searcj project -->
+<div class="container-fluid">
+  <h2 id="studentProject" class="center mt-4 blue rounded-4"><i class="fa-solid fa-file-fragment my-3"></i> Student Project</h2>
+  <div class="col-md-3 mt-3 px-4">
+  <div class="form-floating mb-3">
+    <input type="text" onkeyup="myFunction()" class="form-control bg-body-tertiary" id="myInput" placeholder="Search Project" title="type in a project">
+    <label for="floatingSearch"><i class="fa-solid fa-magnifying-glass"></i> Search Project</label>
+  </div>
+</div>
+<!-- table project -->
+    <table id="myTable" class="table table-striped table-hover">
+        <thead>
+          <tr class="header">
+            <th scope="col">No.</th>
+            <th scope="col">Project</th>
+            <th scope="col">Category</th>
+            <th scope="col">Link</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>Online Shop Website</td>
+            <td>Website</td>
+            <td><a href="https://ariff21.github.io/homestar.github.io/">perabothomestar</a></td>
+          </tr> <!--Dr boleh beli perabot online disini-->
+          <tr>
+            <th scope="row">2</th>
+            <td>Restaurant Menu App</td>
+            <td>Web Application</td>
+            <td><a href="#">TheBakersMenu</a></td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>Last Semester Website Diploma</td>
+            <td>Website</td>
+            <td><a href="#">Fresh Farm</a></td>
+          </tr>
+          <tr>
+            <th scope="row">4</th>
+            <td>Test Website</td>
+            <td>Website</td>
+            <td><a href="#">Wikipedia prototype</a></td>
+          </tr>
+        </tbody>
+      </table>
+      <script>
+        function myFunction() {
+          var input, filter, table, tr, td, i, txtValue;
+          input = document.getElementById("myInput");
+          filter = input.value.toUpperCase();
+          table = document.getElementById("myTable");
+          tr = table.getElementsByTagName("tr");
+          for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[0];
+            if (td) {
+              txtValue = td.textContent || td.innerText;
+              if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                tr[i].style.display = "";
+              } else {
+                tr[i].style.display = "none";
+              }
+            }
+          }
+        }
+      </script>
+</div>
+
+<!-- student data -->
+<div class="container mt-5 blueStatic rounded-4">
+  <h3 class="center"><i class="fa-solid fa-rocket"></i> Performance</h3>
+
+  <div class="row">
+    <div class="col-md-4 mb-4">
+      <div class="card bg-body-tertiary border-0 shadow">
+        <div class="card-body justify">
+          <h6 class="my-2 text-warning">Framework Usage in Web Learning</h6>
+          <p>Progress in mastering Bootstrap stands at <span>55%</span>, reflecting a solid understanding of its core concepts, components, and responsive design principles. This level of proficiency enables student to efficiently implement grid systems, customize layouts, and leverage pre-built UI elements to create visually appealing and user-friendly interfaces.</p>
+          <div class="progress" role="progressbar" aria-label="Success example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-bar bg-success bg-gradient bg-opacity-50" style="width: 55%">55%</div>
+          </div>
+        </div>
+
+        <!-- <div class="text-end mx-3 mb-3"><button type="button" class="btn btn-primary btn-sm">Folder</button>
+          <button type="button" class="btn btn-warning btn-sm">!</button></div> -->
+
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card bg-body-tertiary border-0 shadow">
+        <div class="card-body justify">
+          <h6 class="text-warning my-2">Backend Development in Web Learning</h6>
+          <p>Progress in backend development highlights the foundational understanding achieved in server-side programming, with <span>20%</span> mastery of MySQL. This milestone reflects proficiency in using JavaScript for backend operations, including handling server logic, managing API requests and responses, and integrating with databases.</p>
+          <div class="progress" role="progressbar" aria-label="Success example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-bar bg-success bg-gradient bg-opacity-25" style="width: 20%">20%</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card bg-body-tertiary border-0 shadow">
+        <div class="card-body justify">
+          <h6 class="text-warning my-2">Frontend Development in Web Learning</h6>
+          <p>Achieving <span>65%</span> mastery in HTML, CSS, and JavaScript reflects a solid foundation in frontend development. This progress highlights proficiency in building structured, semantic web pages using HTML, styling them with CSS, and adding dynamic, interactive features through JavaScript.</p>
+          <div class="progress" role="progressbar" aria-label="Success example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-bar bg-success bg-gradient bg-opacity-50" style="width: 65%">65%</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card mb-4 bg-body-tertiary border-0 shadow">
+        <div class="card-body justify">
+          <h6 class="text-warning my-2">API Development and Integration</h6>
+          <p><span>20%</span> mastery in API development and integration, which suggests a strong understanding of fundamental concepts like making requests, handling responses, and working with RESTful APIs. At this stage, they are likely comfortable with authentication methods, error handling, and managing different data formats.</p>
+          <div class="progress" role="progressbar" aria-label="Success example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+          <div class="progress-bar bg-success bg-gradient bg-opacity-25" style="width: 20%">20%</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card mb-4 bg-body-tertiary border-0 shadow">
+        <div class="card-body justify">
+          <h6 class="text-warning my-2">Database Management</h6>
+          <p>Progress in database management shows a developing understanding of database concepts and SQL. Achieving <span>45%</span> mastery indicates familiarity with basic SQL queries for data retrieval and manipulation. This progress suggests an emerging ability to design simple database schemas.</p>
+          <div class="progress" role="progressbar" aria-label="Success example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-bar bg-success bg-gradient bg-opacity-50" style="width: 45%">45%</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card mb-4 bg-body-tertiary border-0 shadow">
+        <div class="card-body justify">
+          <h6 class="text-warning my-2">Version Control (GIT)</h6>
+          <p>Progress in using Git for version control demonstrates a foundational understanding of collaborative software development practices. Achieving <span>10%</span> mastery reflects proficiency in basic Git commands for committing changes, branching, and merging. Indicates an ability to manage code changes effectively.</p>
+          <div class="progress" role="progressbar" aria-label="Success example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-bar bg-success bg-gradient bg-opacity-25" style="width: 10%">10%</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+   <!-- footer -->
+<footer class="footer mt-4 py-3 bg-body-tertiary">
+  <div class="container">
+    <div class="title_footer">UiTM Student E-Profile : USEP</div>
+    <div class="row">
+      <div class="col-md-4">
+        <p class=" ">Universiti Teknologi MARA (UiTM) <br> 40450 Shah Alam, <br>
+          Selangor Darul Ehsan, <br>
+          Malaysia</p>
+        <p class="justify">Phone: 03 - 5544 4909 <br>Email: usep@uitm.edu.my</p>
+      </div>
+      <div class="col-md-4">
+        <h5>Assist Links</h5>
+        <div class="col-md-5">
+            <a href="#">Courses Available</a><br>
+            <a href="#">E-Aduan UiTM</a><br>
+            <a href="#">UiTM Digital Library</a><br>
+            <a href="#">Hal Ehwal Akademik</a><br>
+            <a href="#">Hal Ehwal Pelajar</a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <h5>Quick Links</h5>
+        <div class="col-md-5">
+            <a href="#">Academic Calendar (Full-Time)</a><br>
+            <a href="#">Academic Calendar (Part-Time)</a><br>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- copyright -->
+  <div class="container-fluid mt-1 bg-body-secondary">
+      <div class="row">
+        <div class="col-md-4">
+          <p>Copyright <i class="fa-regular fa-copyright"></i> USEP 2023 ~ 2024</p>
+        </div>
+      </div>
+  </div>
+  </body>
+  <!-- bs js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  
+  <!-- darkmode script -->
+   <!-- script -->
+    <script>
+      function setTheme(theme) {
+        document.documentElement.setAttribute("data-bs-theme", theme);
+        localStorage.setItem("theme", theme);
+        document.getElementById("themeLabel").innerText = theme === "dark" ? "Dark Mode On" : "Dark Mode Off";
+      }
+  
+      document
+            .getElementById("darkModeToggle")
+            .addEventListener("change", function(event) {
+              if (event.target.checked) {
+                setTheme("dark");
+              } else {
+                setTheme("");
+              }
+            });
+  
+            window.onload = function () {
+              let savedTheme = localStorage.getItem("theme");
+              if(savedTheme) {
+                setTheme(savedTheme);
+                if (savedTheme === "dark") {
+                  document.getElementById("darkModeToggle").checked = true;
+                }
+              }
+            }
+    </script>
+  
+  </html>

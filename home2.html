@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>USEP: UiTM student e-profile</title>
+    <!-- favicon -->
+    <link rel="icon" type="image/x-icon" href="images/logo usep 2.png">
+    <!-- bs CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Monomaniac+One&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+    <!-- style.css -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <body>
+    <!-- preloader -->
+    <div id="preloader">
+      <img src="images/loader.gif" alt="Loading..." class="preloader-gif">
+    </div>
+    
+    <script>
+      // Preloader logic
+      window.addEventListener("load", function () {
+        const preloader = document.getElementById("preloader");
+          setTimeout(() => {
+          preloader.style.opacity = "0"; // fade-out effect
+          setTimeout(() => {
+            preloader.style.display = "none"; 
+          }, 500); 
+        }, 1000); 
+      });
+  
+    </script>
+  <!-- header -->
+   <div class="container d-flex justify-content-center">
+        <div class="title">UiTM Student E-Profile</div> 
+   </div>
+
+  <!-- navbar -->
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container">
+      <div class="image-container">
+      <img class="image1" src="images/logo usep.png" alt="USEP Logo" width="50px"><img class="image2" src="images/logo usep 2.png" width="55px" alt="">
+      </div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="home2.html"><i class="fa-solid fa-house"></i></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="profile2.html">Profile</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="course2.html">Course</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact2.html">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="setting2.html">Setting</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about2.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Logout</a>
+          </li>
+        </ul>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="darkModeToggle">
+          <label class="form.check.label" for="darkModeToggle" id="themeLabel">Dark Mode</label>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <!-- content -->
+   <div class="container">
+        <div class="row my-4">
+            <div class="col-md-3">
+              <h2 class="welcomeHeader rotateText">WELCOME TO E-PROFILE</h2>
+              <h5 class="uitm rotateTextUitm">UiTM</h5>
+          </div>
+            <div class="col-md-3">
+              <div class="form-floating mb-3 mt-4">
+                <select class="form-select center bg-body-tertiary bg-transparent" id="floatingSelect" aria-label="Floating label">
+                  <option selected="1">Select Menu</option>
+                  <option value="2">Student Development</option>
+                  <option value="3">Co-curricular</option>
+                  <option value="4">Project and Performance</option>
+                  <option value="5">Log Out</option>
+                </select>
+                <label for="floatingFaculty">Menu <i class="fa-solid fa-caret-down"></i></label>
+              </div>
+            </div>
+            <!-- menu selection script -->
+            <script>
+              document.getElementById("floatingSelect").addEventListener("change", function() {
+        var selectedValue = this.value;
+        if (selectedValue === "2") {
+            window.location.href = "#academic";
+        }
+        else if (selectedValue === "3") {
+          window.location.href = "#curricular";
+        }
+        else if (selectedValue == "4") {
+          window.location.href = "profile2.html#studentProject";
+        }
+        else if (selectedValue == "5") {
+          window.location.href = "index.html";
+        }
+    });
+            </script>
+
+  <!--quote  -->
+  <div class="col-md-6 px-4">
+    <label for="inputQuote" class="col-sm-2 col-form-label"><i class="fa-solid fa-quote-left"></i></label>
+    <div class="col-sm-10">
+      <textarea type="text" class="form-control" id="inputQuote" onkeyup='saveValue(this)'></textarea>
+      <button id='' onclick='shift()' type="button" class="btn btn-outline-success mt-2 rounded-5">Quote</button>
+      <!-- script save quote -->
+      <script>
+        var input = document.getElementById("inputQuote");
+      function shift() { input.value = input.value()}
+      </script>
+      <script>document.getElementById("inputQuote").value = getSavedValue("inputQuote");
+        function saveValue(e){
+                  var id = e.id;  
+                  var val = e.value;  
+                  localStorage.setItem(id, val);
+              }
+              function getSavedValue  (v){
+                  if (!localStorage.getItem(v)) {
+                      return "";
+                  }
+                  return localStorage.getItem(v);
+              }</script>
+            </div>
+          </div>
+          </div>
+      </div>
+  </div>
+<!-- profile -->
+   <div class="container-fluid bg-body-tertiary">
+    <div class="container moveContainer">
+        <div class="row py-5">
+          <div class="col-md-2 text-center mt-2">
+            <div class="containerImage mt-4">
+              <img class="studentPic rounded-3" src="images/yan zainal.jpeg" alt="student pic 1" width="130px">
+              <div class="middle">
+                <div class="noMatrix">Matrix 2024794189</div>
+              </div>
+            </div>
+            <div class="vl opacity-50"></div>
+          </div>
+      <div id="text" class="col-md-10">
+        <div class="container">
+          <div class="row"><h3>MUHAMMAD ZUHRI IMRAN BIN MOHD AZHAN</h3>
+          </div>
+          <div class="row"><h6 class="usep">Universiti Teknologi MARA (UiTM)</h6></div>
+          <div class="row"><p>Faculty: College Computer, Informatic and Mathematic (KPPIM)</p></div>
+          <div class="row"><p>Program: CDIM262 Information System Management</p></div>
+          <div class="row"><p>Email Student: <a href="#">2024794189@student.uitm.edu.my</a></p></div>
+          <div class="row"><p>Contact: <a href="#">+60 16-290 8***</a></p></div>
+          <div class="row"><p>Date of Birth: 31 AUGUST 2003</p>
+          </div>
+        </div>
+
+          <span class="badge customFont mx-2 text-bg-success text-warning-emphasis py-2 px-2"><i class="fa-solid fa-star"></i> Current Semester: 4</span>
+          <span class="badge customFont mx-2 text-bg-success text-warning-emphasis py-2 px-2"><i class="fa-solid fa-book"></i> Status: Ongoing</span>
+          <span class="badge customFont mx-2 text-bg-success text-warning-emphasis py-2 px-2"><i class="fa-solid fa-calendar"></i> Session: 2024</span>
+          </div>
+        </div>
+    </div>
+</div>
+  <!-- Academic INfo -->
+  <div class="container mt-4">
+    <div class="row">
+      <h3 id="academic">Student Development</h3>
+      <h4 class="faculty mb-5">Faculty of Information System Management</h4>
+        <div class="col-md-4">
+          <div class="card shadow bg-body-secondary border-0">
+            <div class="card-body">
+                <canvas id="chart1"></canvas>
+                <script>
+                  const chart1 = document.getElementById('chart1');
+                
+                  new Chart(chart1, {
+                    type: 'bar',
+                    data: {
+                      labels: ['IMC401', 'IMS450', 'IMS501', 'IMS555', 'LCC560', 'CTU565'],
+                      datasets: [{
+                        label: 'Previous Semester GPA (Sem 3)',
+                        data: [3.51, 3.69, 3.45, 3.40, 3.70, 3.86],
+                        backgroundColor: [
+                        'rgba(75, 192, 192, 0.2)'
+                      ],
+                      borderColor: [
+                          'rgb(75, 192, 192)'
+                        ],    
+                        borderWidth: 2
+                        
+                      }]
+                    },
+                    options: {
+                      scales: {
+                        y: {
+                          beginAtZero: true
+                        }
+                      }
+                    }
+                  });
+                </script>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card shadow bg-body-secondary border-0">
+            <div class="card-body">
+              <canvas id="chart2"></canvas>
+                <script>
+                  const chart2 = document.getElementById('chart2');
+                
+                  new Chart(chart2, {
+                    type: 'line',
+                    data: {
+                      labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4', 'Week 5', 'Week 6', 'Week 7', 'Week 8', 'Week 9', 'Week 10', 'Week 11', 'Week 12', 'Week 13', 'Week 14'],
+                      datasets: [{
+                        label: 'Active Merits Collected',
+                        data: [2, 6, 2, 5, 5, 8, 9, 8, 6, 2, 10, 0, 0, 3],
+                        backgroundColor: [
+                        'rgba(75, 192, 192, 0.2)'
+                      ],
+                        borderColor: [
+                          'rgb(75, 192, 192)'
+                        ],
+                        borderWidth: 1
+                      }]
+                    },
+                    options: {
+                      scales: {
+                        y: {
+                          beginAtZero: true
+                        }
+                      }
+                    }
+                  });
+                </script>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card shadow bg-body-secondary border-0">
+            <div class="card-body">
+              <canvas id="chart3"></canvas>
+                <script>
+                  const chart3 = document.getElementById('chart3');
+                
+                  new Chart(chart3, {
+                    type: 'bar',
+                    data: {
+                      labels: ['HTML', 'CSS', 'JavaScript', 'MySQL', 'PHP', 'Bootstrap'],
+                      datasets: [{
+                        label: '% of mastering',
+                        data: [50, 65, 25, 25, 60, 65],
+                        backgroundColor: [
+                        'rgba(75, 192, 192, 0.2)'
+                      ],
+                        borderColor: [
+                          'rgb(75, 192, 192)'
+                        ],
+                        borderWidth: 1,
+                        stepped: true,
+                      }]
+                    },
+                    options: {
+                      scales: {
+                        y: {
+                          beginAtZero: true
+                        }
+                      }
+                    }
+                  });
+                </script>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+<!-- co curricular -->
+   <div class="container-fluid blueStatic my-4">
+      <div class="container py-4">
+        <div class="row">
+          <h3 id="curricular">Co-curricular Academic</h3>
+          <div class="col-md-3">
+            <div class="card my-2 border-5 card_transparent"> 
+              <div class="card-body">
+                  <h5 class="curricular center">Information Management Student Association (IMSA)</h5>
+                  <p class="description justify">IMSA is a student-led organization dedicated to fostering a vibrant community for Information Management students with the aims to enhance academic excellence, professional development, and social connections among members.</p>
+                  <br>
+                  <p>Joined: Mac 2024</p>
+                  <p>Bereau: Technical & Multimedia</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card my-2 border-5 card_transparent"> 
+              <div class="card-body">
+                <h5 class="curriculum center">SUPRO Committee Volunteer</h5>
+                <p class="description justify">SUPRO, an acronym for 'Sukan Antara Program,' is an annual event where IM programs engage in friendly competition across various sports. A dedicated program committee oversees the event, assigning individuals to manage each sport.
+                </p>
+                <br>
+                <br>
+                <p>Joined: November 2024</p>
+                <p>Assigned as: Program committee</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card my-2 border-5 card_transparent"> 
+              <div class="card-body">
+                <h5 class="curriculum center">No Data</h5>
+                <p class="description center"> - 
+                </p>
+                <br>
+                <br>
+                <p>Joined: -</p>
+                <p>Assigned as: -</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card my-2 border-5 card_transparent"> 
+              <div class="card-body">
+                <h5 class="curriculum center">No Data</h5>
+                <p class="description center"> - 
+                </p>
+                <br>
+                <br>
+                <p>Joined: -</p>
+                <p>Assigned as: -</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+   </div>
+
+  <!-- footer -->
+<footer class="footer mt-4 py-3 bg-body-tertiary">
+  <div class="container">
+    <div class="title_footer">UiTM Student E-Profile : USEP</div>
+    <div class="row">
+      <div class="col-md-4">
+        <p class=" ">Universiti Teknologi MARA (UiTM) <br> 40450 Shah Alam, <br>
+          Selangor Darul Ehsan, <br>
+          Malaysia</p>
+        <p class="justify">Phone: 03 - 5544 4909 <br>Email: usep@uitm.edu.my</p>
+      </div>
+      <div class="col-md-4">
+        <h5>Assist Links</h5>
+        <div class="col-md-5">
+            <a href="#">Courses Available</a><br>
+            <a href="#">E-Aduan UiTM</a><br>
+            <a href="#">UiTM Digital Library</a><br>
+            <a href="#">Hal Ehwal Akademik</a><br>
+            <a href="#">Hal Ehwal Pelajar</a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <h5>Quick Links</h5>
+        <div class="col-md-8">
+            <a href="#">Academic Calendar (Full-Time)</a><br>
+            <a href="#">Academic Calendar (Part-Time)</a><br>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- copyright -->
+  <div class="container-fluid mt-1 bg-body-secondary">
+      <div class="row">
+        <div class="col-md-4">
+          <p>Copyright <i class="fa-regular fa-copyright"></i> USEP 2023 ~ 2024</p>
+        </div>
+      </div>
+  </div>
+
+</body>
+<!-- bs js CDN -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+<!-- darkmode script -->
+ <!-- script -->
+  <script>
+    function setTheme(theme) {
+      document.documentElement.setAttribute("data-bs-theme", theme);
+      localStorage.setItem("theme", theme);
+      document.getElementById("themeLabel").innerText = theme === "dark" ? "Dark Mode On" : "Dark Mode Off";
+    }
+
+    document
+          .getElementById("darkModeToggle")
+          .addEventListener("change", function(event) {
+            if (event.target.checked) {
+              setTheme("dark");
+            } else {
+              setTheme("");
+            }
+          });
+
+          window.onload = function () {
+            let savedTheme = localStorage.getItem("theme");
+            if(savedTheme) {
+              setTheme(savedTheme);
+              if (savedTheme === "dark") {
+                document.getElementById("darkModeToggle").checked = true;
+              }
+            }
+          }
+  </script>
+
+</html>
